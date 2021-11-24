@@ -1,0 +1,19 @@
+<section>
+
+    <h1 id="desc">Nossas Postagens</h1>
+    <br>
+
+    {% for postagem in postagens %}
+
+        <article>
+            <header>
+                <!--Titulo-->
+                <h1><a href="http://localhost/startbootstrap-sb-admin-2-master/post/index/{{postagem.id_post}}">{{postagem.titulo}}</a></h1>
+            </header>
+            <!--Post-->
+            <p>{{postagem.conteudo}}</p>
+        </article>
+
+    {% endfor %}
+
+</section>

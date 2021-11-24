@@ -1,0 +1,49 @@
+<section>
+
+        <article>
+            <header>
+                <h1>{{ titulo }}</h1>
+            </header>
+            <p>{{ conteudo }}</p>
+
+            <br>
+            <hr>
+            <br>
+            <header>
+                <h1>Comentarios</h1>
+            </header>
+            
+            <br>
+            <br>
+
+            {% if comentario == false  %}
+                <h4 id="desc">Ainda não existem comentarios para essa postagem!! </h4> 
+            {% else %}
+                {% for coment in comentario %}
+
+                    <h4>{{coment.nome}}</h4>
+                    <p>- {{coment.comentario}}</p>
+                    <br>
+
+                {% endfor %}
+            {% endif %}
+
+            <hr><br><br>
+            <header>
+                <h2>Novo Comentario</h2>
+            </header>
+
+            <form action="http://localhost/startbootstrap-sb-admin-2-master/post/addComent" method="post">
+                
+                <input type="text" name="nome" placeholder="Nome"><br><br>
+
+                <textarea name="comentario" id="" cols="30" rows="10" placeholder="Comentario"></textarea><br><br>
+                <input type="hidden" name="id" value="{{ id }}">
+                <input type="submit" value="Enviar">
+
+            </form>
+
+        </article>
+
+
+</section>
